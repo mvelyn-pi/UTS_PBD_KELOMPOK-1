@@ -1,5 +1,5 @@
 # Sistem Rekap Nilai Praktikum Mahasiswa
-## UTS Pemrograman Basis Data – Kelompok 01
+## UTS Pemrograman Basis Data – Kelompok 03
 
 ---
 
@@ -7,10 +7,10 @@
 
 | No | Nama | NIM | Tanggung Jawab |
 |----|------|-----|----------------|
-| 1  | [Nama Anggota 1] | [NIM] | Database, tabel, relasi, data awal |
-| 2  | [Nama Anggota 2] | [NIM] | Perhitungan nilai akhir (variabel) |
-| 3  | [Nama Anggota 3] | [NIM] | Percabangan grade, bobot, status, perulangan |
-| 4  | [Nama Anggota 4] | [NIM] | Implicit cursor, explicit cursor, cursor parameter |
+| 1  | MUHAMMAD NUR ALAM | [NIM] | Database, tabel, relasi, dan data awal |
+| 2  | MUH.ARDIANSYAH | [NIM] | Stored procedure `rekap_semua_nilai()` + penjelasan query pengujian bagian A & B |
+| 3  | ANDI DEWA FIRDAUS | [NIM] | Stored procedure `rekap_nilai_per_mk()` + penjelasan query pengujian bagian C & D |
+| 4  | M. AFRIZAL FAHREZY | [NIM] | Dokumentasi, laporan PDF, dan README GitHub |
 
 ---
 
@@ -47,38 +47,53 @@ Sistem ini mampu:
 
 ### Langkah-langkah
 
-1. **Buat Database & Tabel**
+1. **Buat Database & Tabel** *(Anggota 1)*
    - Buka tab **SQL** di phpMyAdmin
    - Salin isi `database.sql` → klik **Go**
 
-2. **Masukkan Data Awal**
+2. **Masukkan Data Awal** *(Anggota 1)*
    - Salin isi `data_awal.sql` → klik **Go**
 
-3. **Buat Stored Procedure**
+3. **Buat Stored Procedure** *(Anggota 2 & 3)*
    - Salin isi `procedure_rekap_nilai.sql` → klik **Go**
 
-4. **Jalankan Pengujian**
+4. **Jalankan Pengujian** *(Anggota 2 & 3)*
    - Salin isi `query_pengujian.sql` → klik **Go**
 
 ---
 
 ## 📦 Daftar Stored Procedure
 
-| Procedure | Parameter | Fungsi |
-|-----------|-----------|--------|
-| `rekap_semua_nilai()` | – | Merekap seluruh nilai mahasiswa dari semua mata kuliah |
-| `rekap_nilai_per_mk(p_kode_mk)` | `p_kode_mk VARCHAR(10)` | Merekap nilai mahasiswa pada satu mata kuliah tertentu |
+| Procedure | Dikerjakan | Parameter | Fungsi |
+|-----------|------------|-----------|--------|
+| `rekap_semua_nilai()` | Anggota 2 | – | Merekap seluruh nilai mahasiswa dari semua mata kuliah menggunakan explicit cursor |
+| `rekap_nilai_per_mk(p_kode_mk)` | Anggota 3 | `p_kode_mk VARCHAR(10)` | Merekap nilai mahasiswa pada satu mata kuliah tertentu menggunakan cursor dengan parameter |
 
 ### Contoh Pemanggilan
 ```sql
--- Rekap semua nilai
+-- Rekap semua nilai (Anggota 2)
 CALL rekap_semua_nilai();
 
--- Rekap per mata kuliah
+-- Rekap per mata kuliah (Anggota 3)
 CALL rekap_nilai_per_mk('MK001');
 CALL rekap_nilai_per_mk('MK002');
 CALL rekap_nilai_per_mk('MK003');
 ```
+
+---
+
+## 📂 Pembagian File per Anggota
+
+| File | Dikerjakan Oleh |
+|------|----------------|
+| `database.sql` | Anggota 1 |
+| `data_awal.sql` | Anggota 1 |
+| `procedure_rekap_nilai.sql` → `rekap_semua_nilai()` | Anggota 2 |
+| `query_pengujian.sql` → bagian A & B | Anggota 2 |
+| `procedure_rekap_nilai.sql` → `rekap_nilai_per_mk()` | Anggota 3 |
+| `query_pengujian.sql` → bagian C & D | Anggota 3 |
+| `README.md` | Anggota 4 |
+| `laporan_uts.pdf` | Anggota 4 |
 
 ---
 
@@ -109,24 +124,26 @@ nilai_akhir = (nilai_tugas × 30%) + (nilai_kuis × 30%) + (nilai_uts × 40%)
 
 ```
 UTS_PBD_Kelompok_03/
-├── database.sql              # DDL: database, tabel, relasi
-├── data_awal.sql             # DML: insert data awal
-├── procedure_rekap_nilai.sql # Stored procedure rekap nilai
-├── query_pengujian.sql       # Query pengujian & verifikasi
-├── laporan_uts.pdf           # Laporan projek PDF
-└── README.md                 # Dokumentasi ini
+├── database.sql              # DDL: database, tabel, relasi (Anggota 1)
+├── data_awal.sql             # DML: insert data awal (Anggota 1)
+├── procedure_rekap_nilai.sql # Stored procedure rekap nilai (Anggota 2 & 3)
+├── query_pengujian.sql       # Query pengujian & verifikasi (Anggota 2 & 3)
+├── laporan_uts.pdf           # Laporan projek PDF (Anggota 4)
+└── README.md                 # Dokumentasi ini (Anggota 4)
 ```
 
 ---
 
 ## 🔧 Konsep Pemrograman Basis Data yang Digunakan
 
-- **Variabel Lokal** – Menyimpan nilai sementara dalam procedure
-- **Percabangan** – `CASE` untuk grade, `IF` untuk status kelulusan
-- **Perulangan** – `LOOP` untuk iterasi setiap baris data
-- **Implicit Cursor** – `ROW_COUNT()` menghitung baris yang diperbarui
-- **Explicit Cursor** – `DECLARE CURSOR` membaca data nilai_praktikum
-- **Cursor dengan Parameter** – Parameter procedure digunakan sebagai filter cursor
+| Konsep | Digunakan Di | Dikerjakan Oleh |
+|--------|-------------|----------------|
+| **Variabel Lokal** | `rekap_semua_nilai()` | Anggota 2 |
+| **Percabangan** (`CASE` & `IF`) | `rekap_semua_nilai()` | Anggota 2 |
+| **Perulangan** (`LOOP`) | `rekap_semua_nilai()` | Anggota 2 |
+| **Implicit Cursor** (`ROW_COUNT()`) | `rekap_semua_nilai()` | Anggota 2 |
+| **Explicit Cursor** (`DECLARE CURSOR`) | `rekap_semua_nilai()` | Anggota 2 |
+| **Cursor dengan Parameter** | `rekap_nilai_per_mk()` | Anggota 3 |
 
 ---
 
