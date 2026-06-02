@@ -4,7 +4,7 @@
 -- Mencakup: variabel, percabangan, perulangan,
 --           implicit cursor, explicit cursor, cursor+parameter
 
-USE uts_pbd_kelompok_03;
+USE uts_pbd_kelompok_01;
 
 -- Pastikan delimiter diubah agar procedure tidak terputus
 DELIMITER $$

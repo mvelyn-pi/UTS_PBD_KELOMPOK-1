@@ -1,7 +1,7 @@
 -- FILE: query_pengujian.sql
 -- Query Pengujian Sistem Rekap Nilai Praktikum Mahasiswa
 
-USE uts_pbd_kelompok_1;
+USE uts_pbd_kelompok_01;
 
 -- A. TAMPILKAN DATA AWAL (sebelum procedure dijalankan)
 

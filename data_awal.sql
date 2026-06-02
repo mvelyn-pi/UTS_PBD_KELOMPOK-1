@@ -1,6 +1,6 @@
 -- Data Awal Sistem Rekap Nilai Praktikum Mahasiswa
 
-USE uts_pbd_kelompok_03;
+USE uts_pbd_kelompok_01;
 
 -- DATA DOSEN 
 INSERT INTO dosen (kode_dosen, nama_dosen, email) VALUES

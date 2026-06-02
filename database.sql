@@ -4,8 +4,8 @@
 -- UTS Pemrograman Basis Data
 
 -- Buat dan gunakan database
-CREATE DATABASE IF NOT EXISTS uts_pbd_kelompok_1;
-USE uts_pbd_kelompok_1;
+CREATE DATABASE IF NOT EXISTS uts_pbd_kelompok_01;
+USE uts_pbd_kelompok_01;
 
 -- 1. TABEL DOSEN
 CREATE TABLE IF NOT EXISTS dosen (

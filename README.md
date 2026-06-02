@@ -1,5 +1,5 @@
 # Sistem Rekap Nilai Praktikum Mahasiswa
-## UTS Pemrograman Basis Data – Kelompok 03
+## UTS Pemrograman Basis Data – Kelompok 01
 
 ---
 
