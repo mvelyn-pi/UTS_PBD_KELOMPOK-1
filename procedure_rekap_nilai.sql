@@ -178,7 +178,6 @@ BEGIN
 
     -- PERULANGAN : LOOP
     baca_loop_mk: LOOP
-
         FETCH cur_nilai_mk INTO v_nim,
                                 v_nilai_tugas, v_nilai_kuis, v_nilai_uts;
 
