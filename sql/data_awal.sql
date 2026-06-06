@@ -1,7 +1,6 @@
 -- Data Awal Sistem Rekap Nilai Praktikum Mahasiswa
 -- Disesuaikan dengan Absen Logika Informatika 2024/2025
 USE uts_pbd_kelompok_01;
-
 -- DATA DOSEN 
 INSERT INTO dosen (kode_dosen, nama_dosen, email) VALUES
 ('D001', 'Muh. Nashir Takbir, S.Kom., M.Pd', 'nashirtakbir@univmegabuana.ac.id'),
