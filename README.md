@@ -7,7 +7,7 @@
 
 | No | Nama | NIM | Tanggung Jawab |
 |----|------|-----|----------------|
-| 1  | MUHAMMAD NUR ALAM | IK241152 | Membuat database, tabel, relasi, dan data awal |
+| 1  | MUHAMMAD NUR ALAM | IK2411052 | Membuat database, tabel, relasi, dan data awal |
 | 2  | M. AFRIZAL FAHREZY | IK2411022 | Membuat perhitungan nilai akhir menggunakan variabel |
 | 3  | ANDI DEWA FIRDAUS | IK2411037 | Membuat percabangan grade, bobot, status kelulusan, dan perulangan |
 | 4  | MUH. ARDIANSYAH | IK2411019 | Membuat implicit cursor, explicit cursor, cursor dengan parameter, log rekap, dan laporan |
