@@ -7,10 +7,10 @@
 
 | No | Nama | NIM | Tanggung Jawab |
 |----|------|-----|----------------|
-| 1  | MUHAMMAD NUR ALAM | [NIM] | Database, tabel, relasi, dan data awal |
-| 2  | MUH.ARDIANSYAH | [NIM] | Stored procedure `rekap_semua_nilai()` + penjelasan query pengujian bagian A & B |
-| 3  | ANDI DEWA FIRDAUS | [NIM] | Stored procedure `rekap_nilai_per_mk()` + penjelasan query pengujian bagian C & D |
-| 4  | M. AFRIZAL FAHREZY | [NIM] | Dokumentasi, laporan PDF, dan README GitHub |
+| 1  | MUHAMMAD NUR ALAM | IK241152 | Membuat database, tabel, relasi, dan data awal |
+| 2  | M. AFRIZAL FAHREZY | IK2411022 | Membuat perhitungan nilai akhir menggunakan variabel |
+| 3  | ANDI DEWA FIRDAUS | IK2411037 | Membuat percabangan grade, bobot, status kelulusan, dan perulangan |
+| 4  | MUH. ARDIANSYAH | IK2411019 | Membuat implicit cursor, explicit cursor, cursor dengan parameter, log rekap, dan laporan |
 
 ---
 
@@ -47,18 +47,18 @@ Sistem ini mampu:
 
 ### Langkah-langkah
 
-1. **Buat Database & Tabel** *(Anggota 1)*
+1. **Buat Database & Tabel** *(MUHAMMAD NUR ALAM)*
    - Buka tab **SQL** di phpMyAdmin
-   - Salin isi `database.sql` → klik **Go**
+   - Salin isi `sql/database.sql` → klik **Go**
 
-2. **Masukkan Data Awal** *(Anggota 1)*
-   - Salin isi `data_awal.sql` → klik **Go**
+2. **Masukkan Data Awal** *(MUHAMMAD NUR ALAM)*
+   - Salin isi `sql/data_awal.sql` → klik **Go**
 
-3. **Buat Stored Procedure** *(Anggota 2 & 3)*
-   - Salin isi `procedure_rekap_nilai.sql` → klik **Go**
+3. **Buat Stored Procedure** *(M. AFRIZAL FAHREZY, ANDI DEWA FIRDAUS & MUH. ARDIANSYAH)*
+   - Salin isi `sql/procedure_rekap_nilai.sql` → klik **Go**
 
-4. **Jalankan Pengujian** *(Anggota 2 & 3)*
-   - Salin isi `query_pengujian.sql` → klik **Go**
+4. **Jalankan Pengujian** *(M. AFRIZAL FAHREZY, ANDI DEWA FIRDAUS & MUH. ARDIANSYAH)*
+   - Salin isi `sql/query_pengujian.sql` → klik **Go**
 
 ---
 
@@ -66,15 +66,15 @@ Sistem ini mampu:
 
 | Procedure | Dikerjakan | Parameter | Fungsi |
 |-----------|------------|-----------|--------|
-| `rekap_semua_nilai()` | Anggota 2 | – | Merekap seluruh nilai mahasiswa dari semua mata kuliah menggunakan explicit cursor |
-| `rekap_nilai_per_mk(p_kode_mk)` | Anggota 3 | `p_kode_mk VARCHAR(10)` | Merekap nilai mahasiswa pada satu mata kuliah tertentu menggunakan cursor dengan parameter |
+| `rekap_semua_nilai()` | M. AFRIZAL FAHREZY & ANDI DEWA FIRDAUS | – | Merekap seluruh nilai mahasiswa dari semua mata kuliah menggunakan explicit cursor |
+| `rekap_nilai_per_mk(p_kode_mk)` | MUH. ARDIANSYAH | `p_kode_mk VARCHAR(10)` | Merekap nilai mahasiswa pada satu mata kuliah tertentu menggunakan cursor dengan parameter |
 
 ### Contoh Pemanggilan
 ```sql
--- Rekap semua nilai (Anggota 2)
+-- Rekap semua nilai
 CALL rekap_semua_nilai();
 
--- Rekap per mata kuliah (Anggota 3)
+-- Rekap per mata kuliah
 CALL rekap_nilai_per_mk('MK001');
 CALL rekap_nilai_per_mk('MK002');
 CALL rekap_nilai_per_mk('MK003');
@@ -86,14 +86,14 @@ CALL rekap_nilai_per_mk('MK003');
 
 | File | Dikerjakan Oleh |
 |------|----------------|
-| `database.sql` | Anggota 1 |
-| `data_awal.sql` | Anggota 1 |
-| `procedure_rekap_nilai.sql` → `rekap_semua_nilai()` | Anggota 2 |
-| `query_pengujian.sql` → bagian A & B | Anggota 2 |
-| `procedure_rekap_nilai.sql` → `rekap_nilai_per_mk()` | Anggota 3 |
-| `query_pengujian.sql` → bagian C & D | Anggota 3 |
-| `README.md` | Anggota 4 |
-| `laporan_uts.pdf` | Anggota 4 |
+| `sql/database.sql` | MUHAMMAD NUR ALAM (IK241152) |
+| `sql/data_awal.sql` | MUHAMMAD NUR ALAM (IK241152) |
+| `sql/procedure_rekap_nilai.sql` → variabel & rumus nilai akhir | M. AFRIZAL FAHREZY (IK2411022) |
+| `sql/procedure_rekap_nilai.sql` → percabangan & perulangan | ANDI DEWA FIRDAUS (IK2411037) |
+| `sql/procedure_rekap_nilai.sql` → implicit cursor, explicit cursor, cursor parameter, log | MUH. ARDIANSYAH (IK2411019) |
+| `sql/query_pengujian.sql` | M. AFRIZAL FAHREZY, ANDI DEWA FIRDAUS & MUH. ARDIANSYAH |
+| `laporan/laporan_uts.pdf` | MUH. ARDIANSYAH (IK2411019) |
+| `README.md` | MUH. ARDIANSYAH (IK2411019) |
 
 ---
 
@@ -123,13 +123,15 @@ nilai_akhir = (nilai_tugas × 30%) + (nilai_kuis × 30%) + (nilai_uts × 40%)
 ## 📂 Struktur File Repository
 
 ```
-UTS_PBD_Kelompok_03/
-├── database.sql              # DDL: database, tabel, relasi (Anggota 1)
-├── data_awal.sql             # DML: insert data awal (Anggota 1)
-├── procedure_rekap_nilai.sql # Stored procedure rekap nilai (Anggota 2 & 3)
-├── query_pengujian.sql       # Query pengujian & verifikasi (Anggota 2 & 3)
-├── laporan_uts.pdf           # Laporan projek PDF (Anggota 4)
-└── README.md                 # Dokumentasi ini (Anggota 4)
+UTS_PBD_Kelompok_01/
+├── sql/
+│   ├── database.sql              # DDL: database, tabel, relasi (MUHAMMAD NUR ALAM)
+│   ├── data_awal.sql             # DML: insert data awal (MUHAMMAD NUR ALAM)
+│   ├── procedure_rekap_nilai.sql # Stored procedure rekap nilai (AFRIZAL, ANDI DEWA & ARDIANSYAH)
+│   └── query_pengujian.sql       # Query pengujian & verifikasi (AFRIZAL, ANDI DEWA & ARDIANSYAH)
+├── laporan/
+│   └── laporan_uts.pdf           # Laporan projek PDF (MUH. ARDIANSYAH)
+└── README.md                     # Dokumentasi ini (MUH. ARDIANSYAH)
 ```
 
 ---
@@ -138,12 +140,12 @@ UTS_PBD_Kelompok_03/
 
 | Konsep | Digunakan Di | Dikerjakan Oleh |
 |--------|-------------|----------------|
-| **Variabel Lokal** | `rekap_semua_nilai()` | Anggota 2 |
-| **Percabangan** (`CASE` & `IF`) | `rekap_semua_nilai()` | Anggota 2 |
-| **Perulangan** (`LOOP`) | `rekap_semua_nilai()` | Anggota 2 |
-| **Implicit Cursor** (`ROW_COUNT()`) | `rekap_semua_nilai()` | Anggota 2 |
-| **Explicit Cursor** (`DECLARE CURSOR`) | `rekap_semua_nilai()` | Anggota 2 |
-| **Cursor dengan Parameter** | `rekap_nilai_per_mk()` | Anggota 3 |
+| **Variabel Lokal** | `rekap_semua_nilai()` | M. AFRIZAL FAHREZY |
+| **Percabangan** (`CASE` & `IF`) | `rekap_semua_nilai()` | ANDI DEWA FIRDAUS |
+| **Perulangan** (`LOOP`) | `rekap_semua_nilai()` | ANDI DEWA FIRDAUS |
+| **Implicit Cursor** (`ROW_COUNT()`) | `rekap_semua_nilai()` | MUH. ARDIANSYAH |
+| **Explicit Cursor** (`DECLARE CURSOR`) | `rekap_semua_nilai()` | MUH. ARDIANSYAH |
+| **Cursor dengan Parameter** | `rekap_nilai_per_mk()` | MUH. ARDIANSYAH |
 
 ---
 
