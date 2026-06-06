@@ -150,3 +150,33 @@ UTS_PBD_Kelompok_01/
 ---
 
 *Program Studi S1 Informatika – Universitas Mega Buana Palopo – 2026*
+
+---
+
+## 📸 Screenshot Hasil Program
+
+### 1. Data Awal — Proses Insert ke Database
+![Data Awal 1](laporan/screenshot/data_awal_1.png)
+
+### 2. Verifikasi Jumlah Data Awal per Tabel
+![Data Awal 2](laporan/screenshot/data_awal_2.png)
+
+> Mahasiswa: 65 | Dosen: 2 | Mata Kuliah: 3 | Grade Nilai: 10 | Nilai Praktikum: 74 | Log Rekap Nilai: 0 (kosong)
+
+### 3. Hasil Eksekusi Procedure — Pembuatan Stored Procedure
+![Hasil Eksekusi Procedure 1](laporan/screenshot/hasil_eksekusi_procedure_1.png)
+
+### 4. Hasil Eksekusi Procedure — Konfirmasi Stored Procedure Berhasil Dibuat
+![Hasil Eksekusi Procedure 2](laporan/screenshot/hasil_eksekusi_procedure_2.png)
+
+> Output: *"Semua stored procedure berhasil dibuat."*
+
+### 5. Tabel nilai_praktikum Sebelum Procedure Dijalankan
+![Tabel Nilai Praktikum](laporan/screenshot/tabel_nilai_praktikum.png)
+
+> Kolom `nilai_akhir`, `grade`, `bobot`, dan `status_lulus` masih bernilai NULL sebelum procedure dijalankan.
+
+### 6. Tabel log_rekap_nilai Setelah Procedure Dijalankan
+![Log Rekap Nilai](laporan/screenshot/log_rekap_nilai.png)
+
+> Tabel log terisi otomatis setelah `CALL rekap_semua_nilai()` dijalankan, mencatat seluruh riwayat proses rekap nilai beserta waktu prosesnya.
